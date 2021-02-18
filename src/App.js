@@ -28,7 +28,7 @@ export default class App extends React.Component {
               component={SearchPage}
             />
             <Route
-              path="/pokemon/:pokemon"
+              path="/pokemon/:_id/:pokemon"
               exact
               component={DetailPage}
             />
