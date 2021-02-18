@@ -1,5 +1,6 @@
 import React from 'react';
 import request from 'superagent';
+import PokeList from './PokeList.js';
 
 export default class SearchPage extends React.Component {
 
@@ -57,7 +58,7 @@ export default class SearchPage extends React.Component {
         const lastPage = Math.ceil(this.state.totalPokemon / this.state.pokemonPerPage);
 
         return (
-            <div>
+            <div className="body">
                 <h2>
                     Page {this.state.currentPage}
                 </h2>
@@ -67,6 +68,9 @@ export default class SearchPage extends React.Component {
                 <button onClick={this.handleNextPageClick} disabled={this.state.currentPage === lastPage}>
                     Next Page
                 </button>
+                <div className="poke-list">
+                    <PokeList pokemonArray={pokemonArray} />
+                </div>
             </div>
         );
     }
